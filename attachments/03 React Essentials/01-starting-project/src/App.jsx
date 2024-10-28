@@ -10,10 +10,8 @@ import TabButton from './Components/TabButton.jsx'
 function App() {
   const [selectedTopic, setSelectedTopic] = useState('');
 
-  let tabContent = 'Plase select tab.'
   function handleSelect(selectedButton) {
     setSelectedTopic(selectedButton);
-    console.log(selectedTopic)
 
   }
   return (
