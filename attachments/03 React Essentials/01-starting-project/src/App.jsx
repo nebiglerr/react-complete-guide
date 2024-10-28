@@ -13,8 +13,13 @@ function App() {
   let tabContent = 'Plase select tab.'
 
   const coreConceptItems = [];
+  const tabButtonItems = [];
   for (let i = 0; i < CORE_CONCEPTS.length; i++) {
     coreConceptItems.push(<CoreConcept {...CORE_CONCEPTS[i]} />)
+  }
+
+  for (let i = 0; i < CORE_CONCEPTS.length; i++) {
+    tabButtonItems.push(<TabButton isSelected={selectedTopic === CORE_CONCEPTS[i].title.toLowerCase()} onSelect={() => handleSelect(CORE_CONCEPTS[i].title.toLowerCase())}>{CORE_CONCEPTS[i].title}</TabButton>)
   }
 
   function handleSelect(selectedButton) {
@@ -36,10 +41,7 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton isSelected={selectedTopic === "components"} onSelect={() => handleSelect('components')}>Components</TabButton>
-            <TabButton isSelected={selectedTopic === "jsx"} onSelect={() => handleSelect('jsx')}>JSX</TabButton>
-            <TabButton isSelected={selectedTopic === "props"} onSelect={() => handleSelect('props')}>Props</TabButton>
-            <TabButton isSelected={selectedTopic === "state"} onSelect={() => handleSelect('state')}>State</TabButton>
+           {tabButtonItems}
           </menu>
           {!selectedTopic && <p>Please select a topic.</p> }
           {selectedTopic && (<div id='tab-content'>
