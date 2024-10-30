@@ -1,10 +1,10 @@
-export default function Tabs({ children ,buttons}) {
-
+export default function Tabs({ children ,buttons,ButtonsContainers}) {
+//const ButtonsContainers = buttonsContainer;
     return (
         <>
-            <menu>
+            <ButtonsContainers>
                {buttons}
-            </menu>
+            </ButtonsContainers>
             {children}
         </>
     );

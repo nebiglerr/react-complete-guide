@@ -31,7 +31,9 @@ export default function Examples() {
     }
     return (
         <Section title="Examples" id="examples">
-            <Tabs buttons={
+            <Tabs 
+            ButtonsContainers="menu"
+            buttons={
                 <>
                     <TabButton
                         isSelected={selectedTopic === 'components'}
