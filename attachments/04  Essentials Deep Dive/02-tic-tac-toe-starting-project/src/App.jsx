@@ -1,6 +1,7 @@
 import { useState } from "react"
 import GameBoard from "./component/gAMEbOARD.JSX"
 import Player from "./component/Player"
+import Log from "./component/Log";
 function App() {
 
   const [gameTurns, setGameTurns] = useState([])
@@ -8,7 +9,7 @@ function App() {
   const [activePlayer, setActivePlayer] = useState('X');
   
   function handleSelectSquare(rowIndex, colIndex) {
-    
+
     setActivePlayer((curActivePlayer) => curActivePlayer === 'X' ? 'O' : 'X')
 
     setGameTurns(prevTurns => {
@@ -33,6 +34,7 @@ function App() {
         turns={gameTurns} />
 
       </div>
+      <Log turns={gameTurns} />
     </main>
   )
 }
