@@ -1,4 +1,3 @@
-import { useState } from "react";
 
 const initialGameBoard = [
     [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
@@ -9,7 +8,7 @@ const initialGameBoard = [
     [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
     [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
 ]
-export default function GameBoard({onSelectSquare,activePlayerSymbol}) {
+export default function GameBoard({onSelectSquare}) {
  /*   const [gameBoard, setGameBoard] = useState(initialGameBoard);
 
 
@@ -28,7 +27,7 @@ export default function GameBoard({onSelectSquare,activePlayerSymbol}) {
                 <ol>
                     {row.map((playerSymbol, colIndex) =>
                         <li key={colIndex}>
-                            <button onClick={() => handleSelectSquare(rowIndex, colIndex)}>{playerSymbol}</button>
+                            <button onClick={onSelectSquare}>{playerSymbol}</button>
                         </li>)}
                 </ol>
             </li>)}
