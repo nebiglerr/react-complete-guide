@@ -3,7 +3,6 @@ import GameBoard from "./component/GameBoard";
 import Player from "./component/Player";
 import Log from "./component/Log";
 import { WINNING_COMBINATIONS } from "./WINNING_COMBINATIONS";
-import GameOver from "./component/GameOver";
 
 const initialGameBoard = [
   [null, null, null],
@@ -50,7 +49,7 @@ function App() {
       winner = firstSquareSymbol;
     }
   }
-  const hasDraw = gameTurns.length === 9 && !winner;
+
   function handleSelectSquare(rowIndex, colIndex) {
     setGameTurns((prevTurns) => {
       const currentPlayer = deriveActivePlayer(prevTurns);
@@ -78,7 +77,6 @@ function App() {
             isActive={activePlayer === "O"}
           />
         </ol>
-        {(winner || hasDraw) && <GameOver winner={winner} />}
         <GameBoard onSelectSquare={handleSelectSquare} board={gameBoard} />
       </div>
       <Log turns={gameTurns} />
