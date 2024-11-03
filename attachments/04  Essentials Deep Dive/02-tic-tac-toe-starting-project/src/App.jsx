@@ -32,16 +32,23 @@ function App() {
     const { row, col } = square;
     gameBoard[row][col] = player;
   }
-
-
+  let winner;
   for (let combination of WINNING_COMBINATIONS) {
-   
-    const firstSquareSymbol
-    const secondSquareSymbol
-    const SquareSymbol
+    const firstSquareSymbol =
+      gameBoard[combination[0].row][combination[0].column];
+    const secondSquareSymbol =
+      gameBoard[combination[1].row][combination[1].column];
+    const thirdSquareSymbol =
+      gameBoard[combination[2].row][combination[2].column];
+
+    if (
+      firstSquareSymbol &&
+      firstSquareSymbol === secondSquareSymbol &&
+      firstSquareSymbol === thirdSquareSymbol
+    ) {
+      winner = firstSquareSymbol;
+    }
   }
-
-
 
   function handleSelectSquare(rowIndex, colIndex) {
     setGameTurns((prevTurns) => {
